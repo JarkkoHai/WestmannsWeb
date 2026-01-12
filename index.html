@@ -3,14 +3,90 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Westmanns - Henkilöstövuokraus, myynti, asennus ja kiinteistönhoito">
-    <title>Westmanns - Luotettava kumppani</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Westmanns tarjoaa henkilöstövuokrausta, kiinteistönhoitoa, myynti- ja asennuspalveluita Porvoossa ja pääkaupunkiseudulla. Luotettava kumppani yrityksellesi.">
+    <meta name="keywords" content="henkilöstövuokraus Porvoo, kiinteistönhoito Porvoo, asennuspalvelut, palovaroittimet, graffitien poisto, lumityöt, pihanhoito, JOB henkilöstöpalvelut">
+    <meta name="author" content="Oy Westmanns Ab">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://westmanns.fi/">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://westmanns.fi/">
+    <meta property="og:title" content="Westmanns - Henkilöstövuokraus ja Kiinteistönhoito Porvoossa">
+    <meta property="og:description" content="Luotettava kumppani henkilöstöratkaisuihin ja kiinteistönhoitoon Porvoossa ja pääkaupunkiseudulla.">
+    <meta property="og:image" content="https://westmanns.fi/westmanns_logo_white_fi.jpg">
+    <meta property="og:locale" content="fi_FI">
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://westmanns.fi/">
+    <meta name="twitter:title" content="Westmanns - Henkilöstövuokraus ja Kiinteistönhoito Porvoossa">
+    <meta name="twitter:description" content="Luotettava kumppani henkilöstöratkaisuihin ja kiinteistönhoitoon Porvoossa ja pääkaupunkiseudulla.">
+    <meta name="twitter:image" content="https://westmanns.fi/westmanns_logo_white_fi.jpg">
+    
+    <title>Westmanns - Henkilöstövuokraus ja Kiinteistönhoito Porvoossa | Luotettava Kumppani</title>
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
+    
+    <!-- Structured Data (Schema.org) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Oy Westmanns Ab",
+      "image": "https://westmanns.fi/westmanns_logo_white_fi.jpg",
+      "description": "Henkilöstövuokraus, kiinteistönhoito ja asennuspalvelut Porvoossa ja pääkaupunkiseudulla",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Porvoo",
+        "postalCode": "06100",
+        "addressCountry": "FI"
+      },
+      "telephone": "+358440651825",
+      "email": "info@westmanns.fi",
+      "url": "https://westmanns.fi",
+      "areaServed": [
+        {
+          "@type": "City",
+          "name": "Porvoo"
+        },
+        {
+          "@type": "City",
+          "name": "Helsinki"
+        },
+        {
+          "@type": "City",
+          "name": "Espoo"
+        },
+        {
+          "@type": "City",
+          "name": "Vantaa"
+        }
+      ],
+      "priceRange": "$$",
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday"
+        ],
+        "opens": "08:00",
+        "closes": "17:00"
+      },
+      "sameAs": [
+        "https://jobhp.fi/"
+      ]
+    }
+    </script>
     
     <style>
         * {
@@ -172,6 +248,12 @@
             margin-bottom: 0.5rem;
         }
         
+        .service-card ul ul {
+            margin-left: 2rem;
+            margin-top: 0.5rem;
+            list-style-type: circle;
+        }
+        
         .about {
             background: #f8f9fa;
         }
@@ -273,7 +355,7 @@
     <header>
         <nav>
             <div class="logo">
-                <img src="westmanns_logo_white_fi.jpg" alt="Westmanns logo">
+                <img src="westmanns_logo_white_fi.jpg" alt="Westmanns - Henkilöstövuokraus ja kiinteistönhoito Porvoossa">
             </div>
             <ul>
                 <li><a href="#etusivu">Etusivu</a></li>
@@ -285,17 +367,17 @@
     </header>
 
     <section id="etusivu" class="hero">
-        <h1>Luotettava kumppani henkilöstöratkaisuihin ja kiinteistönhoitoon</h1>
-        <p>Tarjoamme henkilöstövuokrausta <a href="https://jobhp.fi/" target="_blank">JOB Henkilöstöpalvelut</a>, myynti- ja asennuspalveluita sekä ammattitaitoista pihahuoltoa</p>
+        <h1>Luotettava kumppani henkilöstöratkaisuihin ja kiinteistönhoitoon Porvoossa</h1>
+        <p>Tarjoamme henkilöstövuokrausta <a href="https://jobhp.fi/" target="_blank" rel="noopener">JOB Henkilöstöpalvelut</a>, myynti- ja asennuspalveluita sekä ammattitaitoista pihanhoitoa Porvoossa ja pääkaupunkiseudulla</p>
         <a href="#yhteystiedot" class="cta-button">Ota yhteyttä</a>
     </section>
 
     <section id="palvelut" class="container">
-        <h2>Palvelumme</h2>
+        <h2>Palvelumme Porvoossa ja pääkaupunkiseudulla</h2>
         <div class="services">
             <div class="service-card">
                 <h3>Henkilöstövuokraus</h3>
-                <p>Tarjoamme osaavaa ja motivoitunutta työvoimaa eri puolilla Suomea. Joustavat ratkaisut yrityksenne tarpeisiin. Palvelumme tarjoaa JOB Henkilöstöpalvelut > <a href="https://jobhp.fi/" target="_blank">www.jobhp.fi</a></p>
+                <p>Tarjoamme osaavaa ja motivoitunutta työvoimaa eri puolilla Suomea. Joustavat henkilöstöratkaisut yrityksenne tarpeisiin Porvoossa ja pääkaupunkiseudulla. Palvelumme tarjoaa <a href="https://jobhp.fi/" target="_blank" rel="noopener">JOB Henkilöstöpalvelut</a></p>
                 <ul>
                     <li>Henkilöstövuokraus</li>
                     <li>Rekrytointi</li>
@@ -304,13 +386,13 @@
             </div>
             
             <div class="service-card">
-                <h3>Myynti ja asennus</h3>
-                <p>Ammattitaitoista myyntityötä ja asennuspalveluita. Hoidamme projektit alusta loppuun.</p>
+                <h3>Myynti ja asennuspalvelut</h3>
+                <p>Ammattitaitoista myyntityötä ja asennuspalveluita Porvoossa. Hoidamme projektit alusta loppuun laadukkaasti ja tehokkaasti.</p>
                 <ul>
                     <li>Myyntituki</li>
                     <li>Asennustyöt
                         <ul>
-                            <li>Palovaroittimet (akku ja paristokäyttöiset)</li>
+                            <li>Palovaroittimien asennus (akku ja paristokäyttöiset)</li>
                             <li>Graffitien ja tagien poistaminen</li>
                             <li>Monet muut pienet ja isot asennustyöt</li>
                             <li>Tiedustele tarpeesi mukaan</li>
@@ -321,13 +403,13 @@
             </div>
             
             <div class="service-card">
-                <h3>Kiinteistönhoito</h3>
-                <p>Kiinteistönhoitopalvelut ympäri vuoden. Pidämme pihanne kunnossa ja sisätilat siistinä. Olemme pieni, mutta ketterä toimija. Teemme laadun.</p>
+                <h3>Kiinteistönhoito Porvoossa</h3>
+                <p>Ammattitaitoista kiinteistönhoitoa ja pihanhoitoa ympäri vuoden Porvoossa ja lähialueilla. Pidämme pihanne kunnossa ja sisätilat siistinä. Olemme pieni mutta ketterä toimija - teemme laadukasta työtä.</p>
                 <ul>
-                    <li>Lumityöt</li>
-                    <li>Nurmenleikkuu</li>
+                    <li>Lumityöt ja talvihoito</li>
+                    <li>Nurmenleikkuu ja kesähoito</li>
                     <li>Realisointipalvelut</li>
-                    <li>Siivous</li>
+                    <li>Siivouspalvelut</li>
                 </ul>
             </div>
         </div>
@@ -335,12 +417,12 @@
 
     <section id="meista" class="about">
         <div class="container">
-            <h2>Miksi valita meidät?</h2>
+            <h2>Miksi valita Westmanns Porvoossa?</h2>
             <div class="about-content">
                 <p>
-                    Olemme luotettava ja joustava kumppani, joka ymmärtää asiakkaidemme tarpeet. 
+                    Olemme luotettava ja joustava kumppani, joka ymmärtää asiakkaidemme tarpeet Porvoossa ja pääkaupunkiseudulla. 
                     Pitkä kokemuksemme eri aloilta ja sitoutunut henkilöstö takaavat laadukkaan palvelun jokaisessa projektissa. 
-                    Toimimme tehokkaasti ja ammattitaidolla.
+                    Toimimme tehokkaasti ja ammattitaidolla - olipa kyseessä henkilöstövuokraus, kiinteistönhoito tai asennustyöt.
                 </p>
             </div>
         </div>
@@ -348,26 +430,26 @@
 
     <section id="yhteystiedot" class="contact">
         <div class="container">
-            <h2>Ota yhteyttä</h2>
+            <h2>Ota yhteyttä - Palvelemme Porvoossa</h2>
             <div class="contact-info">
                 <div class="contact-item">
                     <h3>Puhelin</h3>
-                    <p><a href="tel:+358440651825">+358 44 065 1825</a></p>
+                    <p><a href="tel:+358440651825" aria-label="Soita numeroon +358 44 065 1825">+358 44 065 1825</a></p>
                 </div>
                 <div class="contact-item">
                     <h3>Sähköposti</h3>
-                    <p><a href="mailto:info@westmanns.fi">info@westmanns.fi</a></p>
+                    <p><a href="mailto:info@westmanns.fi" aria-label="Lähetä sähköpostia osoitteeseen info@westmanns.fi">info@westmanns.fi</a></p>
                 </div>
                 <div class="contact-item">
-                    <h3>Osoite</h3>
-                    <p>Porvoon keskus<br>06100 Porvoo</p>
+                    <h3>Toimialue</h3>
+                    <p>Porvoon keskus<br>06100 Porvoo<br><small>Palvelemme myös pääkaupunkiseudulla</small></p>
                 </div>
             </div>
         </div>
     </section>
 
     <footer>
-        <p>&copy; 2024 Oy Westmanns Ab. Kaikki oikeudet pidätetään.</p>
+        <p>&copy; 2024 Oy Westmanns Ab | Henkilöstövuokraus ja Kiinteistönhoito Porvoossa | Y-tunnus: 3296059-1</p>
     </footer>
 
     <script>
