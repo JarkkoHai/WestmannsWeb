@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Westmanns - Henkilöstövuokraus, myynti, asennus ja kiinteistönhoito">
+    <title>Westmanns - Luotettava kumppani</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+        
+        header {
+            background: #2c3e50;
+            color: white;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        nav a:hover {
+            color: #3498db;
+        }
+        
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 5rem 20px;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: white;
+            color: #667eea;
+            padding: 1rem 2rem;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 20px;
+        }
+        
+        section {
+            scroll-margin-top: 70px;
+        }
+        
+        .services {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .service-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+        }
+        
+        .service-card h3 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+        
+        .service-card p {
+            color: #666;
+            margin-bottom: 1rem;
+        }
+        
+        .service-card ul {
+            color: #666;
+            margin-left: 1.5rem;
+        }
+        
+        .service-card li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .about {
+            background: #f8f9fa;
+        }
+        
+        h2 {
+            text-align: center;
+            margin-bottom: 2rem;
+            color: #2c3e50;
+            font-size: 2rem;
+        }
+        
+        .about-content {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+            color: #555;
+        }
+        
+        .contact {
+            background: #2c3e50;
+            color: white;
+        }
+        
+        .contact h2 {
+            color: white;
+        }
+        
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            text-align: center;
+        }
+        
+        .contact-item h3 {
+            margin-bottom: 0.5rem;
+            font-size: 1.3rem;
+        }
+        
+        .contact-item p {
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+        
+        .contact-item a {
+            color: white;
+            text-decoration: none;
+        }
+        
+        .contact-item a:hover {
+            text-decoration: underline;
+        }
+        
+        footer {
+            background: #1a252f;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+        }
+        
+        footer p {
+            opacity: 0.8;
+        }
+        
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            nav ul {
+                gap: 1rem;
+            }
+            
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+            
+            .services {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">Westmanns</div>
+            <ul>
+                <li><a href="#etusivu">Etusivu</a></li>
+                <li><a href="#palvelut">Palvelut</a></li>
+                <li><a href="#meista">Meistä</a></li>
+                <li><a href="#yhteystiedot">Yhteystiedot</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="etusivu" class="hero">
+        <h1>Luotettava kumppani henkilöstöratkaisuihin ja kiinteistönhoitoon</h1>
+        <p>Tarjoamme henkilöstövuokrausta, myynti- ja asennuspalveluita sekä ammattitaitoista kiinteistönhoitoa</p>
+        <a href="#yhteystiedot" class="cta-button">Ota yhteyttä</a>
+    </section>
+
+    <section id="palvelut" class="container">
+        <h2>Palvelumme</h2>
+        <div class="services">
+            <div class="service-card">
+                <h3>Henkilöstövuokraus</h3>
+                <p>Tarjoamme osaavaa ja motivoitunutta työvoimaa alihankintana. Joustavat ratkaisut yrityksenne tarpeisiin.</p>
+                <ul>
+                    <li>Pitkä- ja lyhytaikaiset ratkaisut</li>
+                    <li>Koulutettu henkilöstö</li>
+                    <li>Nopea reagointi</li>
+                </ul>
+            </div>
+            
+            <div class="service-card">
+                <h3>Myynti ja asennus</h3>
+                <p>Ammattitaitoista myyntityötä ja asennuspalveluita. Hoidamme projektit alusta loppuun.</p>
+                <ul>
+                    <li>Myyntituki</li>
+                    <li>Asennustyöt</li>
+                    <li>Projektikokonaisuudet</li>
+                </ul>
+            </div>
+            
+            <div class="service-card">
+                <h3>Kiinteistönhoito</h3>
+                <p>Kattavat kiinteistönhoitopalvelut ympäri vuoden. Pidämme kiinteistönne kunnossa ja siistinä.</p>
+                <ul>
+                    <li>Talvihoito</li>
+                    <li>Kesähoito</li>
+                    <li>Pihatyöt ja siivous</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="meista" class="about">
+        <div class="container">
+            <h2>Miksi valita meidät?</h2>
+            <div class="about-content">
+                <p>
+                    Olemme luotettava ja joustava kumppani, joka ymmärtää asiakkaidemme tarpeet. 
+                    Pitkä kokemus alalta ja sitoutunut henkilöstö takaavat laadukkaan palvelun jokaisessa projektissa. 
+                    Toimimme nopeasti ja ammattitaidolla.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section id="yhteystiedot" class="contact">
+        <div class="container">
+            <h2>Ota yhteyttä</h2>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <h3>Puhelin</h3>
+                    <p><a href="tel:+358401234567">+358 40 123 4567</a></p>
+                </div>
+                <div class="contact-item">
+                    <h3>Sähköposti</h3>
+                    <p><a href="mailto:info@westmanns.fi">info@westmanns.fi</a></p>
+                </div>
+                <div class="contact-item">
+                    <h3>Osoite</h3>
+                    <p>Kylvotie 3 D<br>02920 Espoo</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Oy Westmanns Ab. Kaikki oikeudet pidätetään.</p>
+    </footer>
+
+    <script>
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
