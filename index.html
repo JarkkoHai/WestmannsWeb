@@ -1,493 +1,857 @@
 <!DOCTYPE html>
 <html lang="fi">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- SEO Meta Tags -->
-    <meta name="description" content="Westmanns tarjoaa henkilöstövuokrausta koko Etelä-Suomessa, kiinteistönhoitoa ja asennuspalveluita Porvoossa ja pääkaupunkiseudulla. Luotettava kumppani yrityksellesi.">
-    <meta name="keywords" content="henkilöstövuokraus Etelä-Suomi, henkilöstövuokraus Helsinki, kiinteistönhoito Porvoo, asennuspalvelut, palovaroittimet, graffitien poisto, lumityöt, pihanhoito, JOB henkilöstöpalvelut">
-    <meta name="author" content="Oy Westmanns Ab">
-    <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://westmanns.fi/">
-    
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://westmanns.fi/">
-    <meta property="og:title" content="Westmanns - Henkilöstövuokraus Etelä-Suomessa ja Kiinteistönhoito Porvoossa">
-    <meta property="og:description" content="Henkilöstövuokrausta koko Etelä-Suomessa. Kiinteistönhoitoa ja asennuspalveluita Porvoossa ja pääkaupunkiseudulla.">
-    <meta property="og:image" content="https://westmanns.fi/westmanns_logo_white_fi.jpg">
-    <meta property="og:locale" content="fi_FI">
-    
-    <!-- Twitter -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:url" content="https://westmanns.fi/">
-    <meta name="twitter:title" content="Westmanns - Henkilöstövuokraus Etelä-Suomessa ja Kiinteistönhoito Porvoossa">
-    <meta name="twitter:description" content="Henkilöstövuokrausta koko Etelä-Suomessa. Kiinteistönhoitoa ja asennuspalveluita Porvoossa ja pääkaupunkiseudulla.">
-    <meta name="twitter:image" content="https://westmanns.fi/westmanns_logo_white_fi.jpg">
-    
-    <title>Westmanns - Henkilöstövuokraus Etelä-Suomessa | Kiinteistönhoito Porvoossa</title>
-    <link rel="icon" type="image/svg+xml" href="favicon.svg">
-    
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
-    
-    <!-- Structured Data (Schema.org) -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "LocalBusiness",
-      "name": "Oy Westmanns Ab",
-      "image": "https://westmanns.fi/westmanns_logo_white_fi.jpg",
-      "description": "Henkilöstövuokraus, kiinteistönhoito ja asennuspalvelut Porvoossa ja pääkaupunkiseudulla",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Porvoo",
-        "postalCode": "06100",
-        "addressCountry": "FI"
-      },
-      "telephone": "+358440651825",
-      "email": "info@westmanns.fi",
-      "url": "https://westmanns.fi",
-      "areaServed": [
-        {
-          "@type": "City",
-          "name": "Porvoo"
-        },
-        {
-          "@type": "City",
-          "name": "Helsinki"
-        },
-        {
-          "@type": "City",
-          "name": "Espoo"
-        },
-        {
-          "@type": "City",
-          "name": "Vantaa"
-        },
-        {
-          "@type": "City",
-          "name": "Sipoo"
-        },
-        {
-          "@type": "City",
-          "name": "Kerava"
-        },
-        {
-          "@type": "City",
-          "name": "Järvenpää"
-        },
-        {
-          "@type": "City",
-          "name": "Hyvinkää"
-        },
-        {
-          "@type": "City",
-          "name": "Lahti"
-        }
-      ],
-      "priceRange": "$$",
-      "openingHoursSpecification": {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": [
-          "Monday",
-          "Tuesday",
-          "Wednesday",
-          "Thursday",
-          "Friday"
-        ],
-        "opens": "08:00",
-        "closes": "17:00"
-      },
-      "sameAs": [
-        "https://jobhp.fi/"
-      ]
-    }
-    </script>
-    
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
-            line-height: 1.6;
-            color: #333;
-        }
-        
-        header {
-            background: #2c3e50;
-            color: white;
-            padding: 1rem 0;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-        
-        nav {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-        }
-        
-        .logo {
-            display: flex;
-            align-items: center;
-        }
-        
-        .logo img {
-            height: 80px;
-            width: auto;
-        }
-        
-        nav ul {
-            display: flex;
-            list-style: none;
-            gap: 2rem;
-            flex-wrap: wrap;
-        }
-        
-        nav a {
-            color: white;
-            text-decoration: none;
-            transition: color 0.3s;
-            font-weight: 500;
-        }
-        
-        nav a:hover {
-            color: #3498db;
-        }
-        
-        .hero {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 5rem 20px;
-            text-align: center;
-        }
-        
-        .hero h1 {
-            font-size: 2.0rem;
-            margin-bottom: 1rem;
-            line-height: 1.2;
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 700;
-        }
-        
-        .hero p {
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
-            opacity: 0.9;
-        }
-        
-        .hero p a {
-            color: white;
-            text-decoration: underline;
-            font-weight: 600;
-        }
-        
-        .hero p a:hover {
-            opacity: 0.8;
-        }
-        
-        .cta-button {
-            display: inline-block;
-            background: white;
-            color: #667eea;
-            padding: 1rem 2rem;
-            text-decoration: none;
-            border-radius: 5px;
-            font-weight: bold;
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-        
-        .cta-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-        }
-        
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 4rem 20px;
-        }
-        
-        section {
-            scroll-margin-top: 70px;
-        }
-        
-        .services {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-        
-        .service-card {
-            background: white;
-            padding: 2rem;
-            border-radius: 10px;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-        
-        .service-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 5px 20px rgba(0,0,0,0.15);
-        }
-        
-        .service-card h3 {
-            color: #2c3e50;
-            margin-bottom: 1rem;
-            font-size: 1.5rem;
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 700;
-        }
-        
-        .service-card p {
-            color: #666;
-            margin-bottom: 1rem;
-        }
-        
-        .service-card ul {
-            color: #666;
-            margin-left: 1.5rem;
-        }
-        
-        .service-card li {
-            margin-bottom: 0.5rem;
-        }
-        
-        .service-card ul ul {
-            margin-left: 2rem;
-            margin-top: 0.5rem;
-            list-style-type: circle;
-        }
-        
-        .about {
-            background: #f8f9fa;
-        }
-        
-        h2 {
-            text-align: center;
-            margin-bottom: 2rem;
-            color: #2c3e50;
-            font-size: 2rem;
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 700;
-        }
-        
-        .about-content {
-            text-align: center;
-            max-width: 800px;
-            margin: 0 auto;
-            font-size: 1.1rem;
-            color: #555;
-        }
-        
-        .contact {
-            background: #2c3e50;
-            color: white;
-        }
-        
-        .contact h2 {
-            color: white;
-        }
-        
-        .contact-info {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            text-align: center;
-        }
-        
-        .contact-item h3 {
-            margin-bottom: 0.5rem;
-            font-size: 1.3rem;
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 700;
-        }
-        
-        .contact-item p {
-            font-size: 1rem;
-            opacity: 0.9;
-        }
-        
-        .contact-item a {
-            color: white;
-            text-decoration: none;
-        }
-        
-        .contact-item a:hover {
-            text-decoration: underline;
-        }
-        
-        footer {
-            background: #1a252f;
-            color: white;
-            text-align: center;
-            padding: 2rem;
-        }
-        
-        footer p {
-            opacity: 0.8;
-        }
-        
-        @media (max-width: 768px) {
-            nav {
-                flex-direction: column;
-                gap: 1rem;
-            }
-            
-            nav ul {
-                gap: 1rem;
-            }
-            
-            .logo img {
-                height: 40px;
-            }
-            
-            .hero h1 {
-                font-size: 1.8rem;
-            }
-            
-            .hero p {
-                font-size: 1rem;
-            }
-            
-            .services {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Oy Westmanns Ab — Digitaalisia tuotteita ja palveluja. KauppalistaPro, PostFlow AI, verkkosivuprojektit sekä henkilöstövuokraus ja kiinteistönhoito.">
+<meta name="keywords" content="Westmanns, KauppalistaPro, PostFlow AI, verkkosivut, henkilöstövuokraus, kiinteistönhoito, Porvoo">
+<meta name="author" content="Oy Westmanns Ab">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://westmanns.fi/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://westmanns.fi/">
+<meta property="og:title" content="Westmanns — Digital Products & Services">
+<meta property="og:description" content="Digitaalisia tuotteita ja palveluja — KauppalistaPro, PostFlow AI, verkkosivuprojektit sekä perinteiset palvelut Porvoossa.">
+<meta property="og:image" content="https://westmanns.fi/westmanns_logo_white_fi.jpg">
+<meta property="og:locale" content="fi_FI">
+<title>Westmanns — Digital Products & Services | Finland</title>
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Oy Westmanns Ab",
+  "url": "https://westmanns.fi",
+  "logo": "https://westmanns.fi/westmanns_logo_white_fi.jpg",
+  "description": "Digitaalisia tuotteita ja palveluja sekä perinteiset palvelut Porvoossa",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Porvoo",
+    "postalCode": "06100",
+    "addressCountry": "FI"
+  },
+  "telephone": "+358440651825",
+  "email": "info@westmanns.fi"
+}
+</script>
+
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg: #0e0f14;
+    --surface: #161820;
+    --surface2: #1c1e28;
+    --border: #252736;
+    --accent: #00e5b0;
+    --accent2: #00c5f5;
+    --accent3: #7b6ff0;
+    --text: #dde0ee;
+    --muted: #606280;
+    --muted2: #9098b8;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 300;
+    line-height: 1.65;
+    overflow-x: hidden;
+  }
+
+  /* NOISE */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 3rem;
+    background: rgba(14,15,20,0.85);
+    backdrop-filter: blur(16px);
+    border-bottom: 1px solid rgba(37,39,54,0.7);
+  }
+
+  .nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    text-decoration: none;
+  }
+
+  .nav-logo img {
+    height: 36px;
+    width: auto;
+    filter: brightness(0) invert(1);
+    opacity: 0.9;
+  }
+
+  .nav-wordmark {
+    font-family: 'Syne', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 800;
+    background: linear-gradient(90deg, var(--accent), var(--accent2));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: -0.02em;
+  }
+
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    list-style: none;
+  }
+
+  .nav-links a {
+    color: var(--muted2);
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 400;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--accent); }
+
+  .nav-cta {
+    padding: 0.45rem 1.1rem;
+    border-radius: 8px;
+    border: 1px solid var(--border) !important;
+    color: var(--text) !important;
+    transition: border-color 0.2s !important;
+  }
+
+  .nav-cta:hover { border-color: var(--accent) !important; color: var(--accent) !important; }
+
+  .nav-hamburger {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--muted2);
+    font-size: 1.4rem;
+    cursor: pointer;
+  }
+
+  /* HERO */
+  .hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 8rem 2rem 5rem;
+    overflow: hidden;
+    z-index: 1;
+  }
+
+  .hero-glow {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    pointer-events: none;
+  }
+
+  .glow-1 { width: 700px; height: 500px; top: 5%; left: 50%; transform: translateX(-50%); background: radial-gradient(ellipse, rgba(0,229,176,0.1) 0%, transparent 70%); }
+  .glow-2 { width: 400px; height: 300px; bottom: 15%; right: 5%; background: radial-gradient(ellipse, rgba(123,111,240,0.09) 0%, transparent 70%); }
+
+  .hero-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent);
+    background: rgba(0,229,176,0.07);
+    border: 1px solid rgba(0,229,176,0.18);
+    padding: 0.38rem 1rem;
+    border-radius: 999px;
+    margin-bottom: 2rem;
+    animation: fadeUp 0.6s ease both;
+  }
+
+  .hero-eyebrow::before {
+    content: '';
+    width: 6px; height: 6px;
+    background: var(--accent);
+    border-radius: 50%;
+    animation: pulse 2s ease infinite;
+  }
+
+  @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.5;transform:scale(0.7)} }
+
+  .hero h1 {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(2.6rem, 6.5vw, 5rem);
+    font-weight: 800;
+    line-height: 1.06;
+    letter-spacing: -0.03em;
+    margin-bottom: 1.5rem;
+    animation: fadeUp 0.6s 0.1s ease both;
+  }
+
+  .grad {
+    background: linear-gradient(135deg, var(--accent) 0%, var(--accent2) 50%, var(--accent3) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .hero-sub {
+    font-size: 1.1rem;
+    color: var(--muted2);
+    max-width: 500px;
+    margin-bottom: 3rem;
+    font-weight: 300;
+    animation: fadeUp 0.6s 0.2s ease both;
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    animation: fadeUp 0.6s 0.3s ease both;
+  }
+
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.85rem 2rem;
+    border-radius: 10px;
+    background: linear-gradient(135deg, var(--accent), var(--accent2));
+    color: #0a0b10;
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: 0.9rem;
+    text-decoration: none;
+    letter-spacing: 0.01em;
+    transition: opacity 0.2s, transform 0.15s;
+  }
+
+  .btn-primary:hover { opacity: 0.88; transform: translateY(-2px); }
+
+  .btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.85rem 2rem;
+    border-radius: 10px;
+    border: 1px solid var(--border);
+    color: var(--muted2);
+    font-size: 0.9rem;
+    text-decoration: none;
+    transition: border-color 0.2s, color 0.2s;
+  }
+
+  .btn-secondary:hover { border-color: var(--accent2); color: var(--text); }
+
+  /* SECTIONS */
+  .section {
+    position: relative;
+    z-index: 1;
+    padding: 6rem 2rem;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .section-label {
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 0.85rem;
+  }
+
+  .section-title {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(1.7rem, 3.5vw, 2.6rem);
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    line-height: 1.15;
+    margin-bottom: 0.85rem;
+  }
+
+  .section-sub {
+    color: var(--muted2);
+    font-size: 1rem;
+    max-width: 480px;
+    margin-bottom: 3.5rem;
+  }
+
+  /* DIVIDER */
+  .divider {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--border), transparent);
+    margin: 0 2rem;
+    position: relative;
+    z-index: 1;
+  }
+
+  /* PRODUCT CARDS */
+  .products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .product-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 2rem;
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    gap: 0.9rem;
+    transition: border-color 0.25s, transform 0.2s, box-shadow 0.25s;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .product-card.c-green { --ca: var(--accent); }
+  .product-card.c-blue  { --ca: var(--accent2); }
+  .product-card.c-purple{ --ca: var(--accent3); }
+
+  .product-card:hover { border-color: var(--ca); transform: translateY(-4px); box-shadow: 0 20px 50px rgba(0,0,0,0.3); }
+
+  .product-card::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--ca), transparent);
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+
+  .product-card:hover::after { opacity: 1; }
+
+  .product-tag {
+    display: inline-block;
+    font-size: 0.67rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 0.2rem 0.65rem;
+    border-radius: 999px;
+  }
+
+  .product-tag.c-green { background: rgba(0,229,176,0.1); color: var(--accent); }
+  .product-tag.c-blue  { background: rgba(0,197,245,0.1); color: var(--accent2); }
+  .product-tag.c-purple{ background: rgba(123,111,240,0.1); color: var(--accent3); }
+
+  .product-icon {
+    width: 48px; height: 48px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+  }
+
+  .product-icon.c-green { background: rgba(0,229,176,0.1); }
+  .product-icon.c-blue  { background: rgba(0,197,245,0.1); }
+  .product-icon.c-purple{ background: rgba(123,111,240,0.1); }
+
+  .product-name {
+    font-family: 'Syne', sans-serif;
+    font-size: 1.25rem;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+  }
+
+  .product-desc {
+    color: var(--muted2);
+    font-size: 0.87rem;
+    line-height: 1.65;
+    flex: 1;
+  }
+
+  .product-features {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+  }
+
+  .product-features li {
+    font-size: 0.81rem;
+    color: var(--muted2);
+    display: flex;
+    align-items: center;
+    gap: 0.45rem;
+  }
+
+  .product-features li::before { content: '✓'; color: var(--ca); font-size: 0.72rem; font-weight: 700; }
+
+  .product-link {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.81rem;
+    font-weight: 500;
+    color: var(--ca);
+    margin-top: 0.25rem;
+    transition: gap 0.2s;
+  }
+
+  .product-card:hover .product-link { gap: 0.7rem; }
+
+  /* SERVICES (perinteiset) */
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.25rem;
+  }
+
+  .service-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 1.75rem;
+    transition: border-color 0.2s;
+  }
+
+  .service-card:hover { border-color: var(--muted); }
+
+  .service-icon { font-size: 1.8rem; margin-bottom: 0.75rem; }
+
+  .service-name {
+    font-family: 'Syne', sans-serif;
+    font-size: 1.05rem;
+    font-weight: 700;
+    margin-bottom: 0.6rem;
+  }
+
+  .service-desc {
+    color: var(--muted2);
+    font-size: 0.85rem;
+    line-height: 1.65;
+    margin-bottom: 0.75rem;
+  }
+
+  .service-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+  }
+
+  .service-list li {
+    font-size: 0.8rem;
+    color: var(--muted);
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+  }
+
+  .service-list li::before { content: '—'; color: var(--muted); font-size: 0.7rem; }
+
+  /* ABOUT */
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+  }
+
+  .about-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+
+  .stat-card {
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 1.25rem;
+  }
+
+  .stat-number {
+    font-family: 'Syne', sans-serif;
+    font-size: 1.9rem;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    background: linear-gradient(135deg, var(--accent), var(--accent2));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .stat-label { font-size: 0.78rem; color: var(--muted); margin-top: 0.2rem; }
+
+  .about-visual {
+    height: 340px;
+    border-radius: 20px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .rings { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; }
+
+  .ring {
+    position: absolute;
+    border-radius: 50%;
+    border: 1px solid;
+    animation: spin linear infinite;
+  }
+
+  .ring-1 { width: 200px; height: 200px; border-color: rgba(0,229,176,0.15); animation-duration: 20s; }
+  .ring-2 { width: 280px; height: 280px; border-color: rgba(0,197,245,0.1); animation-duration: 30s; animation-direction: reverse; }
+  .ring-3 { width: 360px; height: 360px; border-color: rgba(123,111,240,0.07); animation-duration: 45s; }
+
+  @keyframes spin { to { transform: rotate(360deg); } }
+
+  .visual-inner { position: relative; z-index: 1; text-align: center; }
+
+  .visual-logo {
+    font-family: 'Syne', sans-serif;
+    font-size: 2.8rem;
+    font-weight: 800;
+    background: linear-gradient(135deg, var(--accent), var(--accent2), var(--accent3));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: -0.03em;
+    margin-bottom: 0.4rem;
+  }
+
+  .visual-sub { font-size: 0.75rem; color: var(--muted); letter-spacing: 0.1em; text-transform: uppercase; }
+
+  /* CONTACT */
+  .contact-box {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 24px;
+    padding: 3.5rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .contact-box::before {
+    content: '';
+    position: absolute;
+    top: -60px; left: 50%;
+    transform: translateX(-50%);
+    width: 300px; height: 200px;
+    background: radial-gradient(ellipse, rgba(0,229,176,0.08) 0%, transparent 70%);
+    filter: blur(20px);
+  }
+
+  .contact-box h2 {
+    font-family: 'Syne', sans-serif;
+    font-size: 2rem;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    margin-bottom: 0.85rem;
+    position: relative;
+  }
+
+  .contact-box p { color: var(--muted2); margin-bottom: 2rem; position: relative; }
+
+  .contact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1rem;
+    margin-bottom: 2rem;
+    position: relative;
+  }
+
+  .contact-item {
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.25rem;
+  }
+
+  .contact-item-label { font-size: 0.72rem; color: var(--muted); letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 0.4rem; }
+
+  .contact-item a, .contact-item span {
+    font-size: 0.9rem;
+    color: var(--text);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .contact-item a:hover { color: var(--accent); }
+
+  /* FOOTER */
+  footer {
+    border-top: 1px solid var(--border);
+    padding: 2rem 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+    position: relative;
+    z-index: 1;
+  }
+
+  .footer-logo {
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: 0.95rem;
+    background: linear-gradient(90deg, var(--accent), var(--accent2));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .footer-copy { font-size: 0.76rem; color: var(--muted); }
+
+  .footer-links { display: flex; gap: 1.5rem; list-style: none; flex-wrap: wrap; }
+
+  .footer-links a { font-size: 0.76rem; color: var(--muted); text-decoration: none; transition: color 0.2s; }
+  .footer-links a:hover { color: var(--accent); }
+
+  /* ANIMATIONS */
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+  .anim { animation: fadeUp 0.6s ease both; }
+  .d1 { animation-delay: 0.1s; }
+  .d2 { animation-delay: 0.2s; }
+  .d3 { animation-delay: 0.3s; }
+
+  /* RESPONSIVE */
+  @media (max-width: 768px) {
+    nav { padding: 1rem 1.5rem; }
+    .nav-links { display: none; }
+    .nav-hamburger { display: block; }
+    .about-grid { grid-template-columns: 1fr; }
+    .about-visual { display: none; }
+    .contact-box { padding: 2rem 1.5rem; }
+    .section { padding: 4rem 1.5rem; }
+    footer { flex-direction: column; text-align: center; padding: 2rem 1.5rem; }
+  }
+</style>
 </head>
 <body>
-    <header>
-        <nav>
-            <div class="logo">
-                <img src="westmanns_logo_white_fi.jpg" alt="Westmanns - Henkilöstövuokraus ja kiinteistönhoito Porvoossa">
-            </div>
-            <ul>
-                <li><a href="#etusivu">Etusivu</a></li>
-                <li><a href="#palvelut">Palvelut</a></li>
-                <li><a href="#meista">Meistä</a></li>
-                <li><a href="#yhteystiedot">Yhteystiedot</a></li>
-            </ul>
-        </nav>
-    </header>
 
-    <section id="etusivu" class="hero">
-        <h1>Luotettava kumppani henkilöstövuokraukseen ja kiinteistönhoitoon</h1>
-        <p>Tarjoamme henkilöstövuokrausta koko Etelä-Suomessa <a href="https://jobhp.fi/" target="_blank" rel="noopener">JOB Henkilöstöpalvelut</a>. Kiinteistönhoito, myynti- ja asennuspalvelut Porvoossa ja pääkaupunkiseudulla.</p>
-        <a href="#yhteystiedot" class="cta-button">Ota yhteyttä</a>
-    </section>
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">
+    <img src="westmanns_logo_white_fi.jpg" alt="Westmanns" />
+  </a>
+  <ul class="nav-links">
+    <li><a href="#tuotteet">Tuotteet</a></li>
+    <li><a href="#meista">Meistä</a></li>
+    <li><a href="#yhteystiedot" class="nav-cta">Ota yhteyttä</a></li>
+  </ul>
+  <button class="nav-hamburger" onclick="this.nextElementSibling && null">☰</button>
+</nav>
 
-    <section id="palvelut" class="container">
-        <h2>Palvelumme - Etelä-Suomi ja Pääkaupunkiseutu</h2>
-        <div class="services">
-            <div class="service-card">
-                <h3>Henkilöstövuokraus</h3>
-                <p>Tarjoamme osaavaa ja motivoitunutta työvoimaa koko Etelä-Suomessa - Helsingissä, Espoossa, Vantaalla, Porvoossa, Lahdessa ja muualla. Joustavat henkilöstöratkaisut yrityksenne tarpeisiin. Palvelumme tarjoaa <a href="https://jobhp.fi/" target="_blank" rel="noopener">JOB Henkilöstöpalvelut</a></p>
-                <ul>
-                    <li>Henkilöstövuokraus koko Etelä-Suomessa</li>
-                    <li>Rekrytointi</li>
-                    <li>Ulkoistamispalvelut</li>
-                </ul>
-            </div>
-            
-            <div class="service-card">
-                <h3>Myynti ja asennuspalvelut</h3>
-                <p>Ammattitaitoista myyntityötä ja asennuspalveluita Porvoossa. Hoidamme projektit alusta loppuun laadukkaasti ja tehokkaasti.</p>
-                <ul>
-                    <li>Myyntituki</li>
-                    <li>Asennustyöt
-                        <ul>
-                            <li>Palovaroittimien asennus (akku ja paristokäyttöiset)</li>
-                            <li>Graffitien ja tagien poistaminen</li>
-                            <li>Monet muut pienet ja isot asennustyöt</li>
-                            <li>Tiedustele tarpeesi mukaan</li>
-                        </ul>
-                    </li>
-                    <li>Projektikokonaisuudet</li>
-                </ul>
-            </div>
-            
-            <div class="service-card">
-                <h3>Kiinteistönhoito Porvoossa</h3>
-                <p>Ammattitaitoista kiinteistönhoitoa ja pihanhoitoa ympäri vuoden Porvoossa ja lähialueilla. Pidämme pihanne kunnossa ja sisätilat siistinä. Olemme pieni mutta ketterä toimija - teemme laadukasta työtä.</p>
-                <ul>
-                    <li>Lumityöt ja talvihoito</li>
-                    <li>Nurmenleikkuu ja kesähoito</li>
-                    <li>Realisointipalvelut</li>
-                    <li>Siivouspalvelut</li>
-                </ul>
-            </div>
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-glow glow-1"></div>
+  <div class="hero-glow glow-2"></div>
+
+  <div class="hero-eyebrow">Oy Westmanns Ab — Porvoo, Finland</div>
+
+  <h1>
+    Digitaalisia tuotteita<br />
+    <span class="grad">tulevaisuuden tarpeisiin</span>
+  </h1>
+
+  <p class="hero-sub">
+    Rakennamme skaalautuvia SaaS-palveluita ja mobiilisovelluksia
+    yrityksille ja kuluttajille globaalisti.
+  </p>
+
+  <div class="hero-actions">
+    <a href="#tuotteet" class="btn-primary">Tutustu tuotteisiin →</a>
+    <a href="#yhteystiedot" class="btn-secondary">Ota yhteyttä</a>
+  </div>
+</div>
+
+<!-- DIGITAALISET TUOTTEET -->
+<div class="section" id="tuotteet">
+  <div class="section-label">Digitaaliset tuotteet</div>
+  <h2 class="section-title anim">Mitä rakennamme</h2>
+  <p class="section-sub anim d1">Jokainen tuote ratkaisee oikean ongelman — yksinkertaisesti ja globaalisti.</p>
+
+  <div class="products-grid">
+
+    <a href="https://kauppalistapro.fi" target="_blank" class="product-card c-green anim d1">
+      <div><span class="product-tag c-green">Mobiilisovellus · Android</span></div>
+      <div class="product-icon c-green">🛒</div>
+      <div class="product-name">Kauppalista Pro</div>
+      <p class="product-desc">Älykäs jaettu ostoslista perheille ja talouksille. Reaaliaikainen synkronointi, Pro+ tekoälyassistentti ja tuki kolmelle kielelle.</p>
+      <ul class="product-features">
+        <li>Jaettu lista reaaliajassa</li>
+        <li>Pro+ AI-chatbot-assistentti</li>
+        <li>Suomi, Englanti, Ruotsi</li>
+        <li>Google Play — tulossa pian</li>
+      </ul>
+      <div class="product-link">kauppalistapro.fi <span>→</span></div>
+    </a>
+
+    <a href="https://postflow.com" target="_blank" class="product-card c-blue anim d2">
+      <div><span class="product-tag c-blue">SaaS · Globaali</span></div>
+      <div class="product-icon c-blue">✦</div>
+      <div class="product-name">PostFlow AI</div>
+      <p class="product-desc">AI-pohjainen some-sisällöntuottaja yrityksille. Syötä tuotetiedot — saat valmiit postaukset Instagramiin, LinkedIniin, Facebookiin ja TikTokiin.</p>
+      <ul class="product-features">
+        <li>Instagram, LinkedIn, Facebook, TikTok</li>
+        <li>Useita kieliä yhdellä klikkauksella</li>
+        <li>Claude AI — huippulaadukas sisältö</li>
+        <li>€9.90/kk — Tulossa pian</li>
+      </ul>
+      <div class="product-link">postflow.com <span>→</span></div>
+    </a>
+
+    <a href="#yhteystiedot" class="product-card c-purple anim d3">
+      <div><span class="product-tag c-purple">Projektipalvelu · B2B</span></div>
+      <div class="product-icon c-purple">🌐</div>
+      <div class="product-name">Verkkosivuprojektit</div>
+      <p class="product-desc">Räätälöidyt verkkosivut ja verkkokaupat yrityksille. Moderni design, nopea toimitus — React, Firebase tai WordPress tarpeen mukaan.</p>
+      <ul class="product-features">
+        <li>React, Firebase, WordPress/WooCommerce</li>
+        <li>Stripe-maksut ja tilaukset</li>
+        <li>Cloudflare, domain, SSL</li>
+        <li>Jatkuva tuki ja kehitys</li>
+      </ul>
+      <div class="product-link">Kysy tarjous <span>→</span></div>
+    </a>
+
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ABOUT -->
+<div class="section" id="meista">
+  <div class="about-grid">
+    <div>
+      <div class="section-label">Meistä</div>
+      <h2 class="section-title anim">Oy Westmanns Ab</h2>
+      <p class="anim d1" style="color:var(--muted2);font-size:1rem;line-height:1.75;margin-bottom:0.5rem;">
+        Suomalainen ohjelmistostudio, joka rakentaa digitaalisia tuotteita itsenäisesti ja tehokkaasti — ilman turhaa byrokratiaa.
+      </p>
+      <p class="anim d1" style="color:var(--muted2);font-size:1rem;line-height:1.75;">
+        Teknologiapohjana moderni stack: React, Firebase, Stripe ja Claude AI. Tavoitteena globaalisti skaalautuvat tuotteet.
+      </p>
+      <div class="about-stats anim d2">
+        <div class="stat-card">
+          <div class="stat-number">3+</div>
+          <div class="stat-label">Digitaalista tuotetta</div>
         </div>
-    </section>
-
-    <section id="meista" class="about">
-        <div class="container">
-            <h2>Miksi valita Westmanns?</h2>
-            <div class="about-content">
-                <p>
-                    Olemme luotettava ja joustava kumppani, joka ymmärtää asiakkaidemme tarpeet koko Etelä-Suomessa. 
-                    Henkilöstövuokraus toimii Helsingissä, Espoossa, Vantaalla, Porvoossa, Lahdessa ja laajemmin Etelä-Suomen alueella.
-                    Kiinteistönhoito ja asennuspalvelut keskittyvät Porvooseen ja pääkaupunkiseudulle.
-                    Pitkä kokemuksemme eri aloilta ja sitoutunut henkilöstö takaavat laadukkaan palvelun jokaisessa projektissa. 
-                    Toimimme tehokkaasti ja ammattitaidolla.
-                </p>
-            </div>
+        <div class="stat-card">
+          <div class="stat-number">AI</div>
+          <div class="stat-label">Claude API -pohjainen</div>
         </div>
-    </section>
-
-    <section id="yhteystiedot" class="contact">
-        <div class="container">
-            <h2>Ota yhteyttä</h2>
-            <div class="contact-info">
-                <div class="contact-item">
-                    <h3>Puhelin</h3>
-                    <p><a href="tel:+358440651825" aria-label="Soita numeroon +358 44 065 1825">+358 44 065 1825</a></p>
-                </div>
-                <div class="contact-item">
-                    <h3>Sähköposti</h3>
-                    <p><a href="mailto:info@westmanns.fi" aria-label="Lähetä sähköpostia osoitteeseen info@westmanns.fi">info@westmanns.fi</a></p>
-                </div>
-                <div class="contact-item">
-                    <h3>Toimialue</h3>
-                    <p>Porvoon keskus<br>06100 Porvoo<br><small>Henkilöstövuokraus: Koko Etelä-Suomi<br>Kiinteistönhoito: Porvoo ja pääkaupunkiseutu</small></p>
-                </div>
-            </div>
+        <div class="stat-card">
+          <div class="stat-number">🌍</div>
+          <div class="stat-label">Globaali kohdemarkkina</div>
         </div>
-    </section>
+        <div class="stat-card">
+          <div class="stat-number">🇫🇮</div>
+          <div class="stat-label">Finland</div>
+        </div>
+      </div>
+    </div>
 
-    <footer>
-        <p>&copy; 2024 Oy Westmanns Ab | Henkilöstövuokraus Etelä-Suomessa | Kiinteistönhoito Porvoossa | Y-tunnus: 3296059-1</p>
-    </footer>
+    <div class="about-visual anim d2">
+      <div class="rings">
+        <div class="ring ring-1"></div>
+        <div class="ring ring-2"></div>
+        <div class="ring ring-3"></div>
+      </div>
+      <div class="visual-inner">
+        <div class="visual-logo">W</div>
+        <div class="visual-sub">Westmanns · Finland</div>
+      </div>
+    </div>
+  </div>
+</div>
 
-    <script>
-        // Smooth scroll for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-    </script>
-</body>
-</html>
+<div class="divider"></div>
+
+<!-- CONTACT -->
+<div class="section" id="yhteystiedot">
+  <div class="contact-box anim">
+    <h2>Tehdään jotain <span class="grad">yhdessä</span></h2>
+    <p>Yhteistyö, digitaaliset projektit tai kysymykset tuotteistamme — olemme yhteydessä.</p>
+
+    <div class="contact-grid">
+      <div class="contact-item">
+        <div class="contact-item-label">Puhelin</div>
+        <a href="tel:+358440651825">+358 44 065 1825</a>
+      </div>
+      <div class="contact-item">
+        <div class="contact-item-label">Sähköposti</div>
+        <a href="/cdn-cgi/l/email-protection#422b2c242d02352731362f232c2c316c242b"><span class="__cf_email__" data-cfemail="88e1e6eee7c8ffedfbfce5e9e6e6fba6eee1">[email&#160;protected]</span></a>
+      </div>
+      <div class="contact-item">
+        <div class="contact-item-label">Toimipaikka</div>
+        <span>Finland</span>
+      </div>
+    </div>
+
+    <form action="https://formspree.io/f/xeepkryw" method="POST" style="position:relative;max-width:480px;margin:0 auto;display:flex;flex-direction:column;gap:0.85rem;">
+      <input type="email" name="email" required placeholder="Sähköpostiosoitteesi"
+        style="background:var(--surface2);border:1px solid var(--border);border-radius:10px;color:var(--text);font-family:'DM Sans',sans-serif;font-size:0.9rem;padding:0.75rem 1rem;outline:none;transition:border-color 0.2s;width:100%;"
+        onfocus="this.style.borderColor='var(--accent)'" onblur="this.style.borderColor='var(--border)'" />
+      <input type="text" name="name" placeholder="Nimesi"
+        style="background:var(--surface2);border:1px solid var(--border);border-radius:10px;color:var(--text);font-family:'DM Sans',sans-serif;font-size:0.9rem;padding:0.75rem 1rem;outline:none;transition:border-color 0.2s;width:100%;"
+        onfocus="this.style.borderColor='var(--accent)'" onblur="this.style.borderColor='var(--border)'" />
+      <textarea name="message" required placeholder="Viestisi..." rows="4"
+        style="background:var(--surface2);border:1px solid var(--border);border-radius:10px;color:var(--text);font-family:'DM Sans',sans-serif;font-size:0.9rem;padding:0.75rem 1rem;outline:none;transition:border-color 0.2s;width:100%;resize:vertical;"
+        onfocus="this.style.borderColor='var(--accent)'" onblur="this.style.borderColor='var(--border)'"></textarea>
+      <button type="submit" class="btn-primary" style="justify-content:center;border:none;cursor:pointer;font-size:0.9rem;">
+        📬 Lähetä viesti
+      </button>
+    </form>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">Westmanns</div>
+  <span class="footer-copy">© 2025 Oy Westmanns Ab · Y-tunnus: 3296059-1 · Finland</span>
+  <ul class="footer-links">
+    <li><a href="https://kauppalistapro.fi" target="_blank">KauppalistaPro</a></li>
+    <li><a href="#tuotteet">PostFlow AI</a></li>
+    <li><a href="#meista">Meistä</a></li>
+    <li><a href="#yhteystiedot">Yhteystiedot</a></li>
+  </ul>
+</footer>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+  // Scroll animations
+  const obs = new IntersectionObserver(
+    entries => entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); }),
+    { threshold: 0.08 }
+  );
+  document.querySelectorAll('.anim').forEach(el => obs.observe(el));
+
+  // Smooth scroll
+  document.querySel
