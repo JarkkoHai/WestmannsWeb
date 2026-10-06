@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="canonical" href="https://westmanns.fi/pesujono/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://westmanns.fi/pesujono/">
+<meta property="og:title" content="Pesujono — autonpesun työjono autoliikkeille">
+<meta property="og:image" content="https://westmanns.fi/westmanns_logo_white_fi.jpg">
+<meta property="og:locale" content="fi_FI">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<title>Pesujono – autonpesun työjono autoliikkeille | Westmanns</title>
+<meta name="description" content="Pesujono on yksinkertainen selainsovellus, jolla automyyjät tilaavat autonpesut ja pesuhalli näkee jonon, määräajat ja palautuspaikat yhdestä näkymästä.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0e0f14;
+    --bg-2: #161820;
+    --bg-3: #1c1e28;
+    --line: #252736;
+    --text: #dde0ee;
+    --muted: #9098b8;
+    --accent: #00e5b0;
+    --accent-ink: #0a0b10;
+    --amber: #F2B84B;
+    --danger: #F28B82;
+    --radius: 14px;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+  }
+  h1, h2, h3, .brand { font-family: "Bebas Neue", sans-serif; letter-spacing: 0.05em; }
+  a { color: inherit; }
+  .container { max-width: 1040px; margin: 0 auto; padding: 0 20px; }
+
+  nav { display: flex; align-items: center; justify-content: space-between; padding: 20px 0; }
+  .brand { font-weight: 800; font-size: 18px; text-decoration: none; }
+  .brand span { color: var(--accent); }
+  .nav-link { color: var(--muted); text-decoration: none; font-size: 14px; margin-left: 20px; }
+  .nav-link:hover { color: var(--text); }
+
+  .hero { padding: 56px 0 72px; display: grid; gap: 40px; grid-template-columns: 1.1fr 0.9fr; align-items: center; }
+  .eyebrow { display: inline-block; font-size: 12px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); border: 1px solid rgba(61,214,192,0.35); border-radius: 999px; padding: 4px 12px; margin-bottom: 20px; }
+  h1 { font-size: clamp(34px, 6vw, 56px); line-height: 1.05; font-weight: 800; margin: 0 0 18px; }
+  .lead { font-size: 18px; color: var(--muted); margin: 0 0 28px; max-width: 520px; }
+  .cta-row { display: flex; gap: 12px; flex-wrap: wrap; }
+  .btn { display: inline-block; text-decoration: none; font-family: inherit; font-weight: 500; font-size: 15px; padding: 12px 22px; border-radius: 10px; border: 1px solid var(--line); color: var(--text); background: transparent; cursor: pointer; transition: transform .15s, background .15s; }
+  .btn:hover { transform: translateY(-1px); background: var(--bg-3); }
+  .btn-primary { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); font-weight: 600; }
+  .btn-primary:hover { background: #5BE3CF; }
+
+  .mock { background: var(--bg-2); border: 1px solid var(--line); border-radius: 20px; padding: 16px; box-shadow: 0 30px 80px rgba(0,0,0,0.5); }
+  .mock-bar { display: flex; gap: 6px; margin-bottom: 14px; }
+  .mock-bar i { width: 9px; height: 9px; border-radius: 50%; background: var(--line); display: block; }
+  .tiles { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 12px; }
+  .tile { border: none; text-align: left; border-radius: 12px; padding: 12px; min-height: 78px; display: flex; flex-direction: column; justify-content: space-between; font-size: 13px; font-weight: 600; font-family: "Bebas Neue", sans-serif; }
+  .tile small { font-family: "DM Sans", sans-serif; font-weight: 500; font-size: 11px; opacity: 0.85; }
+  .t1 { background: #3A2E14; color: var(--amber); }
+  .t2 { background: #10332E; color: var(--accent); }
+  .t3 { background: #23262F; color: #C9CDD8; }
+  .t4 { background: #3A2E14; color: var(--amber); }
+  .car { background: var(--bg-3); border: 1px solid var(--line); border-radius: 12px; padding: 11px 13px; display: flex; justify-content: space-between; align-items: center; gap: 10px; font-size: 13px; margin-top: 8px; }
+  .car b { font-weight: 600; display: block; }
+  .car span { color: var(--muted); font-size: 12px; }
+  .pill { font-size: 11px; font-weight: 600; padding: 3px 10px; border-radius: 999px; white-space: nowrap; }
+  .pill.wash { background: #3A2E14; color: var(--amber); }
+  .pill.queue { background: #23262F; color: #C9CDD8; }
+  .pill.done { background: #10332E; color: var(--accent); }
+
+  section { padding: 64px 0; border-top: 1px solid var(--line); }
+  h2 { font-size: clamp(26px, 4vw, 38px); font-weight: 700; line-height: 1.1; margin: 0 0 14px; }
+  .section-lead { color: var(--muted); max-width: 600px; margin: 0 0 36px; }
+  .grid-3 { display: grid; gap: 14px; grid-template-columns: repeat(3, 1fr); }
+  .grid-2 { display: grid; gap: 14px; grid-template-columns: repeat(2, 1fr); }
+  .card { background: var(--bg-2); border: 1px solid var(--line); border-radius: var(--radius); padding: 22px; }
+  .card h3 { font-size: 18px; margin: 0 0 8px; font-weight: 700; }
+  .card p { margin: 0; color: var(--muted); font-size: 15px; }
+  .num { font-family: "Bebas Neue", sans-serif; font-weight: 800; font-size: 14px; color: var(--accent); margin-bottom: 10px; }
+  .problem ul { padding-left: 18px; margin: 0; }
+  .problem li { color: var(--muted); margin-bottom: 8px; }
+
+  /* ---------- Demo ---------- */
+  .demo-wrap { display: grid; grid-template-columns: 0.8fr 1.2fr; gap: 32px; align-items: start; }
+  .demo-side p { color: var(--muted); margin: 0 0 14px; }
+  .demo-side ol { color: var(--muted); padding-left: 20px; margin: 0 0 20px; }
+  .demo-side li { margin-bottom: 8px; }
+  .demo-note { font-size: 13px; color: var(--muted); border-left: 2px solid var(--line); padding-left: 12px; }
+  .demo { background: var(--bg-2); border: 1px solid var(--line); border-radius: 20px; padding: 16px; box-shadow: 0 30px 80px rgba(0,0,0,0.45); max-width: 520px; width: 100%; }
+  .demo-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 14px; }
+  .demo-top h3 { margin: 0; font-size: 16px; font-weight: 700; }
+  .demo-reset { font-size: 12px; color: var(--muted); background: none; border: none; cursor: pointer; font-family: inherit; text-decoration: underline; padding: 4px; }
+  .demo-reset:hover { color: var(--text); }
+  .d-tiles { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .d-tile { cursor: pointer; min-height: 104px; padding: 14px; font-size: 15px; transition: transform .15s; }
+  .d-tile:hover { transform: translateY(-2px); }
+  .d-chips { display: flex; gap: 6px; flex-wrap: wrap; }
+  .d-chip { font-family: "DM Sans", sans-serif; font-size: 11px; font-weight: 500; padding: 2px 8px; border-radius: 999px; background: rgba(255,255,255,0.1); }
+  .d-back { display: inline-flex; align-items: center; gap: 6px; background: var(--bg-3); color: var(--text); border: 1px solid var(--line); border-radius: 8px; padding: 6px 12px; font-family: inherit; font-size: 13px; cursor: pointer; }
+  .d-board-head { display: flex; align-items: center; gap: 10px; margin-bottom: 14px; }
+  .d-board-head h3 { margin: 0; font-size: 16px; }
+  .d-form { background: var(--bg-3); border: 1px solid var(--line); border-radius: 12px; padding: 12px; margin-bottom: 14px; display: grid; gap: 8px; }
+  .d-form input, .d-form select, .d-card select { width: 100%; font-family: inherit; font-size: 14px; color: var(--text); background: var(--bg); border: 1px solid var(--line); border-radius: 8px; padding: 9px 11px; color-scheme: dark; }
+  .d-form input:focus, .d-card select:focus { outline: none; border-color: var(--accent); }
+  .d-form label { font-size: 12px; color: var(--muted); display: block; margin-bottom: 3px; }
+  .d-row2 { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+  .d-error { color: var(--danger); font-size: 12px; display: none; }
+  .d-add { background: var(--accent); color: var(--accent-ink); border: none; border-radius: 8px; padding: 10px; font-family: inherit; font-weight: 600; font-size: 14px; cursor: pointer; }
+  .d-add:hover { background: #5BE3CF; }
+  .d-card { background: var(--bg-3); border: 1px solid var(--line); border-radius: 12px; padding: 12px; margin-bottom: 10px; }
+  .d-card-top { display: flex; justify-content: space-between; gap: 8px; align-items: flex-start; margin-bottom: 8px; }
+  .d-card-top b { font-weight: 600; font-size: 14px; display: block; }
+  .d-card-top span.sub { color: var(--muted); font-size: 12px; }
+  .d-meta { width: 100%; font-size: 12px; border-collapse: collapse; margin-bottom: 8px; }
+  .d-meta td { padding: 2px 0; color: var(--muted); }
+  .d-meta td:last-child { text-align: right; color: var(--text); }
+  .d-meta .late { color: var(--danger); font-weight: 500; }
+  .d-washer { margin-bottom: 8px; }
+  .d-washer label { font-size: 11px; color: var(--muted); display: block; margin-bottom: 3px; }
+  .d-actions { display: flex; gap: 8px; }
+  .d-btn { flex: 1; background: var(--bg); color: var(--text); border: 1px solid var(--line); border-radius: 8px; padding: 8px; font-family: inherit; font-size: 13px; cursor: pointer; }
+  .d-btn:hover { border-color: var(--accent); }
+  .d-btn.del { flex: 0 0 auto; padding: 8px 12px; color: var(--muted); }
+  .d-btn.del:hover { color: var(--danger); border-color: var(--danger); }
+  .d-photo-add { display: flex; align-items: center; justify-content: center; gap: 6px; border: 1px dashed var(--line); border-radius: 8px; padding: 8px; margin-bottom: 8px; font-size: 12px; color: var(--muted); cursor: pointer; }
+  .d-photo-add:hover { border-color: var(--accent); color: var(--text); }
+  .d-photo-add input { display: none; }
+  .d-photo { position: relative; margin-bottom: 8px; }
+  .d-photo img { width: 100%; max-height: 140px; object-fit: cover; border-radius: 8px; display: block; }
+  .d-photo button { position: absolute; top: 6px; right: 6px; width: 24px; height: 24px; border-radius: 50%; border: none; background: rgba(0,0,0,0.6); color: #fff; cursor: pointer; font-size: 14px; line-height: 1; }
+  .d-empty { text-align: center; color: var(--muted); font-size: 13px; padding: 24px 8px; }
+
+  .cta-box { background: linear-gradient(135deg, #10332E 0%, var(--bg-2) 70%); border: 1px solid rgba(61,214,192,0.3); border-radius: 22px; padding: 44px 32px; text-align: center; }
+  .cta-box p { color: var(--muted); max-width: 480px; margin: 0 auto 24px; }
+
+  footer { border-top: 1px solid var(--line); padding: 28px 0 48px; color: var(--muted); font-size: 13px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
+
+  @media (max-width: 820px) {
+    .hero { grid-template-columns: 1fr; padding-top: 24px; }
+    .grid-3, .grid-2 { grid-template-columns: 1fr; }
+    .demo-wrap { grid-template-columns: 1fr; }
+    .demo { max-width: none; }
+  }
+  /* Bebas Neue sopii vain yhdellä paksuudella ja pienempänä kuin sen koko antaa ymmärtää */
+  h1, h2, h3, .brand, .tile, .num { font-weight: 400; }
+  h1 { font-size: clamp(2.6rem, 6.5vw, 5rem); line-height: 1.06; }
+  h2 { font-size: clamp(1.9rem, 4vw, 2.8rem); }
+  .brand { font-size: 26px; }
+  .card h3 { font-size: 24px; }
+  .tile { font-size: 19px; letter-spacing: 0.05em; }
+  .d-tile { font-size: 22px; }
+  .demo-top h3, .d-board-head h3 { font-size: 24px; }
+  .num { font-size: 20px; }
+  .btn { letter-spacing: 0.01em; }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <nav>
+    <a class="brand" href="#">Pesu<span>jono</span></a>
+    <div>
+      <a class="nav-link" href="/">← Westmanns</a>
+      <a class="nav-link" href="#demo">Kokeile</a>
+      <a class="nav-link" href="#yhteys">Pyydä esittely</a>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div>
+      <span class="eyebrow">Autoliikkeille ja korjaamoille</span>
+      <h1>Pesujono, jossa jokainen auto on valmis ajallaan.</h1>
+      <p class="lead">Myyjä tilaa pesun hetkessä. Pesuhalli näkee jonon määräajan mukaan. Ei enää viestejä, lappuja eikä "oliko se jo pesty?" -kyselyitä.</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="#demo">Kokeile demoa</a>
+        <a class="btn" href="#yhteys">Pyydä esittely</a>
+      </div>
+    </div>
+
+    <div class="mock" aria-hidden="true">
+      <div class="mock-bar"><i></i><i></i><i></i></div>
+      <div class="tiles">
+        <div class="tile t1">Vaihtoautot<small>3 jonossa · 1 pesussa</small></div>
+        <div class="tile t2">Uudet autot<small>2 jonossa · 4 valmis</small></div>
+        <div class="tile t3">Vauriokorjaamo<small>1 jonossa</small></div>
+        <div class="tile t4">Muut<small>Ei autoja</small></div>
+      </div>
+      <div class="car"><div><b>Kia Ceed · ABC-123</b><span>Valmis klo 14:30 · Piha B</span></div><span class="pill wash">Pesussa</span></div>
+      <div class="car"><div><b>Skoda Octavia · XYZ-789</b><span>Valmis klo 16:00 · Näyttämö</span></div><span class="pill queue">Jonossa</span></div>
+      <div class="car"><div><b>Mitsubishi ASX · KLM-456</b><span>Valmis klo 12:00 · Luovutus</span></div><span class="pill done">Valmis</span></div>
+    </div>
+  </header>
+
+  <section class="problem">
+    <h2>Pesutilaukset hukkuvat helposti arjen keskelle</h2>
+    <p class="section-lead">Kun pesuja tilataan suullisesti, viestillä tai paperilapulla, kukaan ei oikein tiedä kokonaiskuvaa.</p>
+    <div class="grid-2">
+      <div class="card">
+        <h3>Ennen</h3>
+        <ul>
+          <li>Tilaus kulkee puhelimessa tai WhatsAppissa</li>
+          <li>Määräaika ja palautuspaikka unohtuvat</li>
+          <li>Pesijä ei tiedä mikä auto on kiireisin</li>
+          <li>Myyjä joutuu soittamaan perään</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Pesujonolla</h3>
+        <ul>
+          <li>Kaikki tiedot yhdessä kortissa</li>
+          <li>Jono järjestyy määräajan mukaan</li>
+          <li>Myöhässä oleva pesu korostuu punaisella</li>
+          <li>Myyjä näkee tilan ilman soittoa</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="toiminta">
+    <h2>Kolme vaihetta, ei koulutusta</h2>
+    <p class="section-lead">Käyttö opitaan ensimmäisellä kerralla. Sovellus toimii puhelimella, tabletilla ja tietokoneella.</p>
+    <div class="grid-3">
+      <div class="card"><div class="num">01</div><h3>Myyjä tilaa</h3><p>Merkki, malli, rekisterinumero, milloin auton pitää olla valmis, minne se palautetaan ja kuka tilasi.</p></div>
+      <div class="card"><div class="num">02</div><h3>Pesijä ottaa työn</h3><p>Pesuhalli näkee jonon kiireellisyysjärjestyksessä, valitsee itsensä pesijäksi ja siirtää auton tilaan Pesussa.</p></div>
+      <div class="card"><div class="num">03</div><h3>Auto on valmis</h3><p>Tila päivittyy Valmis-merkillä, ja myyjä näkee heti että auto voidaan hakea sovittuun paikkaan.</p></div>
+    </div>
+  </section>
+
+  <section id="demo">
+    <div class="demo-wrap">
+      <div class="demo-side">
+        <h2>Kokeile itse</h2>
+        <p>Tämä on toimiva demo. Mukana on muutama esimerkkiauto, mutta voit lisätä omia ja viedä niitä vaiheesta toiseen.</p>
+        <ol>
+          <li>Avaa pesuryhmä laatasta</li>
+          <li>Lisää auto lomakkeella</li>
+          <li>Valitse pesijä kortilta</li>
+          <li>Siirrä auto Pesussa- ja Valmis-tilaan</li>
+        </ol>
+        <p class="demo-note">Demon tiedot tallentuvat vain tämän selaimen muistiin, eivätkä ne näy muille. Varsinaisessa käytössä jono on jaettu kaikille myyjille ja pesijöille.</p>
+      </div>
+
+      <div class="demo" id="demo-app" aria-label="Pesujono-demo">
+        <div class="demo-top">
+          <h3 id="d-title">Pesuryhmät</h3>
+          <button class="demo-reset" id="d-reset" type="button">Nollaa demo</button>
+        </div>
+
+        <div id="d-home">
+          <div class="d-tiles" id="d-tiles" style="display:grid;grid-template-columns:1fr 1fr;gap:10px;"></div>
+        </div>
+
+        <div id="d-board" style="display:none;">
+          <div class="d-board-head">
+            <button class="d-back" id="d-back" type="button">← Takaisin</button>
+            <h3 id="d-board-title"></h3>
+          </div>
+          <form class="d-form" id="d-form" autocomplete="off">
+            <div class="d-row2">
+              <input id="d-brand" placeholder="Merkki" aria-label="Merkki">
+              <input id="d-model" placeholder="Malli" aria-label="Malli">
+            </div>
+            <input id="d-plate" placeholder="Rekisterinumero" aria-label="Rekisterinumero">
+            <div>
+              <label for="d-due">Valmis mennessä</label>
+              <input id="d-due" type="datetime-local">
+            </div>
+            <div class="d-row2">
+              <input id="d-return" placeholder="Palautuspaikka" aria-label="Palautuspaikka">
+              <input id="d-orderer" placeholder="Tilaaja (myyjä)" aria-label="Tilaaja">
+            </div>
+            <label class="d-photo-add" id="d-photo-label">+ Lisää kuva (auto / avaimet)<input type="file" accept="image/*" id="d-photo-in"></label>
+            <div class="d-photo" id="d-photo-prev" style="display:none;margin-bottom:0;">
+              <img id="d-photo-img" alt="Valittu kuva">
+              <button type="button" id="d-photo-x" aria-label="Poista kuva">×</button>
+            </div>
+            <div class="d-error" id="d-error"></div>
+            <button class="d-add" type="submit">Lisää jonoon</button>
+          </form>
+          <div id="d-list"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Tehty arkeen, ei raporttien tuijotteluun</h2>
+    <p class="section-lead">Vain ne ominaisuudet, joita autonpesun työjono oikeasti tarvitsee.</p>
+    <div class="grid-3">
+      <div class="card"><h3>Pesuryhmät laattoina</h3><p>Vaihtoautot, uudet autot, vauriokorjaamo ja muut omina laattoinaan. Jokaisessa näkyy montako autoa on jonossa, pesussa ja valmiina.</p></div>
+      <div class="card"><h3>Kuva autosta tai avaimista</h3><p>Lisää tapauskohtaisesti kuva, niin pesijä löytää oikean auton ja avaimet ilman arvailua.</p></div>
+      <div class="card"><h3>Määräaika edellä</h3><p>Jono lajittuu valmistumisajan mukaan. Myöhästyvät työt nousevat esiin.</p></div>
+      <div class="card"><h3>Pesijävalinta kortilla</h3><p>Pesijä kirjataan vasta kun työ otetaan käsittelyyn, kuten oikeassa arjessa.</p></div>
+      <div class="card"><h3>Palautuspaikka mukana</h3><p>Jokaisella tilauksella kerrotaan minne auto viedään pesun jälkeen.</p></div>
+      <div class="card"><h3>Ei asennettavaa</h3><p>Toimii selaimessa. Raportointi ja historia on mahdollista lisätä myöhemmin.</p></div>
+    </div>
+  </section>
+
+  <section id="yhteys">
+    <div class="cta-box">
+      <h2>Kokeillaan teidän liikkeessänne</h2>
+      <p>Kerro millaiset pesuryhmät ja pesijät teillä on, niin rakennamme sovelluksen heti oikeilla nimillä valmiiksi.</p>
+      <a class="btn btn-primary" href="mailto:info@westmanns.fi?subject=Pesujono%20-%20esittelypyynt%C3%B6">Pyydä esittely</a>
+    </div>
+  </section>
+
+  <footer>
+    <span>© Oy Westmanns Ab</span>
+    <a href="/" style="text-decoration:none;">westmanns.fi</a>
+  </footer>
+
+</div>
+
+<script>
+(function() {
+  var WASHERS = ['Ville', 'Emma', 'Aleksi', 'Noora'];
+  var GROUPS = [
+    { id: 'g1', name: 'Vaihtoautot', cls: 't1' },
+    { id: 'g2', name: 'Uudet autot', cls: 't2' },
+    { id: 'g3', name: 'Vauriokorjaamo', cls: 't3' },
+    { id: 'g4', name: 'Muut', cls: 't4' }
+  ];
+  var STATUSES = ['jonossa', 'pesussa', 'valmis'];
+  var LABEL = { jonossa: 'Jonossa', pesussa: 'Pesussa', valmis: 'Valmis' };
+  var PILL = { jonossa: 'queue', pesussa: 'wash', valmis: 'done' };
+  var KEY = 'pesujono-demo-v1';
+  var MAX_DIM = 480;
+  var bookings = [];
+  var current = null;
+
+  function $(id) { return document.getElementById(id); }
+  function esc(s) {
+    return String(s == null ? '' : s).replace(/[&<>"']/g, function(c) {
+      return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
+    });
+  }
+  function pad(n) { return n < 10 ? '0' + n : '' + n; }
+  function toLocalInput(ms) {
+    var d = new Date(ms);
+    return d.getFullYear() + '-' + pad(d.getMonth() + 1) + '-' + pad(d.getDate()) + 'T' + pad(d.getHours()) + ':' + pad(d.getMinutes());
+  }
+  function fmt(iso) {
+    var d = new Date(iso);
+    if (isNaN(d.getTime())) return '';
+    return d.getDate() + '.' + (d.getMonth() + 1) + '. klo ' + pad(d.getHours()) + ':' + pad(d.getMinutes());
+  }
+  function uid() { return 'b' + Date.now().toString(36) + Math.random().toString(36).slice(2, 7); }
+
+  function seed() {
+    var h = 3600000, now = Date.now();
+    return [
+      { id: uid(), groupId: 'g1', brand: 'Kia', model: 'Ceed', plate: 'ABC-123', due: toLocalInput(now + 2 * h), returnLoc: 'Piha B', orderer: 'Mikko', washer: 'Ville', status: 'pesussa' },
+      { id: uid(), groupId: 'g1', brand: 'Skoda', model: 'Octavia', plate: 'XYZ-789', due: toLocalInput(now + 4 * h), returnLoc: 'Näyttämö', orderer: 'Sanna', washer: '', status: 'jonossa' },
+      { id: uid(), groupId: 'g2', brand: 'Mitsubishi', model: 'ASX', plate: 'KLM-456', due: toLocalInput(now - 1 * h), returnLoc: 'Luovutus', orderer: 'Jari', washer: 'Emma', status: 'jonossa' },
+      { id: uid(), groupId: 'g3', brand: 'Skoda', model: 'Kodiaq', plate: 'DEF-321', due: toLocalInput(now + 24 * h), returnLoc: 'Korjaamon piha', orderer: 'Tero', washer: '', status: 'jonossa' }
+    ];
+  }
+
+  function load() {
+    try {
+      var raw = localStorage.getItem(KEY);
+      if (raw) { bookings = JSON.parse(raw); return; }
+    } catch (e) {}
+    bookings = seed();
+    save();
+  }
+  function save() {
+    try { localStorage.setItem(KEY, JSON.stringify(bookings)); } catch (e) {}
+  }
+
+  function compress(file, cb) {
+    var r = new FileReader();
+    r.onload = function(ev) {
+      var img = new Image();
+      img.onload = function() {
+        var w = img.width, h = img.height;
+        if (w > h && w > MAX_DIM) { h = Math.round(h * MAX_DIM / w); w = MAX_DIM; }
+        else if (h > MAX_DIM) { w = Math.round(w * MAX_DIM / h); h = MAX_DIM; }
+        var c = document.createElement('canvas');
+        c.width = w; c.height = h;
+        c.getContext('2d').drawImage(img, 0, 0, w, h);
+        cb(c.toDataURL('image/jpeg', 0.7));
+      };
+      img.src = ev.target.result;
+    };
+    r.readAsDataURL(file);
+  }
+
+  function renderHome() {
+    current = null;
+    $('d-title').textContent = 'Pesuryhmät';
+    $('d-home').style.display = '';
+    $('d-board').style.display = 'none';
+    $('d-tiles').innerHTML = GROUPS.map(function(g) {
+      var items = bookings.filter(function(b) { return b.groupId === g.id; });
+      var n = function(s) { return items.filter(function(b) { return b.status === s; }).length; };
+      var chips = items.length
+        ? '<div class="d-chips"><span class="d-chip">' + n('jonossa') + ' jonossa</span><span class="d-chip">' + n('pesussa') + ' pesussa</span><span class="d-chip">' + n('valmis') + ' valmis</span></div>'
+        : '<span class="d-chip">Ei autoja</span>';
+      return '<button type="button" class="tile d-tile ' + g.cls + '" data-g="' + g.id + '">' + esc(g.name) + chips + '</button>';
+    }).join('');
+    Array.prototype.forEach.call($('d-tiles').querySelectorAll('.d-tile'), function(t) {
+      t.addEventListener('click', function() { openGroup(t.getAttribute('data-g')); });
+    });
+  }
+
+  function openGroup(id) {
+    current = GROUPS.filter(function(g) { return g.id === id; })[0];
+    if (!current) return;
+    $('d-title').textContent = 'Pesujono';
+    $('d-home').style.display = 'none';
+    $('d-board').style.display = '';
+    $('d-board-title').textContent = current.name;
+    $('d-error').style.display = 'none';
+    renderList();
+  }
+
+  function washerOpts(sel) {
+    var o = '<option value="">Ei valittu</option>';
+    WASHERS.forEach(function(w) { o += '<option value="' + w + '"' + (sel === w ? ' selected' : '') + '>' + w + '</option>'; });
+    return o;
+  }
+
+  function renderList() {
+    var list = $('d-list');
+    var items = bookings.filter(function(b) { return b.groupId === current.id; });
+    if (!items.length) {
+      list.innerHTML = '<div class="d-empty">Jono on tyhjä. Lisää ensimmäinen auto yllä.</div>';
+      return;
+    }
+    items.sort(function(a, b) {
+      if ((a.status === 'valmis') !== (b.status === 'valmis')) return a.status === 'valmis' ? 1 : -1;
+      return (a.due || '').localeCompare(b.due || '');
+    });
+    list.innerHTML = items.map(function(b) {
+      var late = b.status !== 'valmis' && b.due && new Date(b.due).getTime() < Date.now();
+      var photo = b.photo
+        ? '<div class="d-photo"><img src="' + b.photo + '" alt="Kuva autosta tai avaimista"><button type="button" class="p-del" data-id="' + b.id + '" aria-label="Poista kuva">×</button></div>'
+        : '<label class="d-photo-add">+ Lisää kuva (auto / avaimet)<input type="file" accept="image/*" class="p-in" data-id="' + b.id + '"></label>';
+      var next = b.status === 'jonossa' ? 'Aloita pesu' : (b.status === 'pesussa' ? 'Merkitse valmiiksi' : 'Avaa uudelleen');
+      return '<div class="d-card">' +
+        '<div class="d-card-top"><div><b>' + esc(b.brand + ' ' + b.model) + '</b><span class="sub">' + esc(b.plate || '-') + ' · ' + esc(b.orderer) + '</span></div><span class="pill ' + PILL[b.status] + '">' + LABEL[b.status] + '</span></div>' +
+        photo +
+        '<table class="d-meta"><tr><td>Valmis</td><td class="' + (late ? 'late' : '') + '">' + fmt(b.due) + (late ? ' (myöhässä)' : '') + '</td></tr>' +
+        '<tr><td>Palautus</td><td>' + esc(b.returnLoc || '-') + '</td></tr></table>' +
+        '<div class="d-washer"><label>Pesijä</label><select class="w-sel" data-id="' + b.id + '">' + washerOpts(b.washer) + '</select></div>' +
+        '<div class="d-actions"><button type="button" class="d-btn cyc" data-id="' + b.id + '">' + next + '</button>' +
+        '<button type="button" class="d-btn del" data-id="' + b.id + '" aria-label="Poista">Poista</button></div>' +
+        '</div>';
+    }).join('');
+
+    function find(id) { return bookings.filter(function(x) { return x.id === id; })[0]; }
+    function each(sel, fn) { Array.prototype.forEach.call(list.querySelectorAll(sel), fn); }
+
+    each('.w-sel', function(s) { s.addEventListener('change', function() { var b = find(s.getAttribute('data-id')); if (b) { b.washer = s.value; save(); } }); });
+    each('.cyc', function(btn) { btn.addEventListener('click', function() {
+      var b = find(btn.getAttribute('data-id')); if (!b) return;
+      b.status = b.status === 'valmis' ? 'jonossa' : STATUSES[STATUSES.indexOf(b.status) + 1];
+      save(); renderList();
+    }); });
+    each('.del', function(btn) { btn.addEventListener('click', function() {
+      var id = btn.getAttribute('data-id');
+      bookings = bookings.filter(function(x) { return x.id !== id; });
+      save(); renderList();
+    }); });
+    each('.p-in', function(inp) { inp.addEventListener('change', function() {
+      var f = inp.files && inp.files[0]; var b = find(inp.getAttribute('data-id'));
+      if (!f || !b) return;
+      compress(f, function(url) { b.photo = url; save(); renderList(); });
+    }); });
+    each('.p-del', function(btn) { btn.addEventListener('click', function() {
+      var b = find(btn.getAttribute('data-id')); if (b) { delete b.photo; save(); renderList(); }
+    }); });
+  }
+
+  var pendingPhoto = null;
+  function setPending(url) {
+    pendingPhoto = url || null;
+    $('d-photo-label').style.display = pendingPhoto ? 'none' : '';
+    $('d-photo-prev').style.display = pendingPhoto ? '' : 'none';
+    if (pendingPhoto) $('d-photo-img').src = pendingPhoto; else $('d-photo-img').removeAttribute('src');
+    $('d-photo-in').value = '';
+  }
+  $('d-photo-in').addEventListener('change', function() {
+    var f = this.files && this.files[0];
+    if (!f) return;
+    compress(f, setPending);
+  });
+  $('d-photo-x').addEventListener('click', function() { setPending(null); });
+
+  $('d-back').addEventListener('click', function() { setPending(null); renderHome(); });
+  $('d-reset').addEventListener('click', function() {
+    bookings = seed(); save();
+    if (current) renderList(); else renderHome();
+  });
+
+  $('d-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    var brand = $('d-brand').value.trim(), model = $('d-model').value.trim(), plate = $('d-plate').value.trim();
+    var due = $('d-due').value, ret = $('d-return').value.trim(), who = $('d-orderer').value.trim();
+    var err = $('d-error');
+    if (!brand || !due || !who) {
+      err.textContent = 'Täytä vähintään merkki, valmis mennessä ja tilaaja.';
+      err.style.display = 'block';
+      return;
+    }
+    err.style.display = 'none';
+    var nb = { id: uid(), groupId: current.id, brand: brand, model: model, plate: plate, due: due, returnLoc: ret, orderer: who, washer: '', status: 'jonossa' };
+    if (pendingPhoto) nb.photo = pendingPhoto;
+    bookings.push(nb);
+    setPending(null);
+    save();
+    ['d-brand', 'd-model', 'd-plate', 'd-due', 'd-return', 'd-orderer'].forEach(function(id) { $(id).value = ''; });
+    renderList();
+  });
+
+  load();
+  renderHome();
+})();
+</script>
+</body>
+</html>
